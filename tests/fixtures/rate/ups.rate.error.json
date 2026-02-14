@@ -1,0 +1,10 @@
+{
+  "RateResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "0",
+        "Description": "Failure"
+      }
+    }
+  }
+}

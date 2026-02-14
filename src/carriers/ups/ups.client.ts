@@ -8,8 +8,8 @@ export class UPSClient {
 	private http: HttpClient;
 	private auth: UPSAuthClient;
 
-	constructor(credentials: UPSCredentials) {
-		this.http = utilsRegistry.httpClient;
+	constructor(credentials: UPSCredentials, http?: HttpClient) {
+		this.http = http ?? utilsRegistry.httpClient;
 		this.auth = new UPSAuthClient(this.http, credentials);
 	}
 

@@ -1,0 +1,16 @@
+{
+  "RateResponse": {
+    "RatedShipment": [
+      {
+        "Service": {
+          "Code": "03",
+          "Description": "UPS Ground"
+        },
+        "TotalCharges": {
+          "CurrencyCode": "USD",
+          "MonetaryValue": "10.50"
+        }
+      }
+    ]
+  }
+}
