@@ -1,6 +1,4 @@
-interface PostOptions<
-	T extends Record<string, unknown> = Record<string, unknown>,
-> {
+interface PostOptions<T = unknown> {
 	url: string;
 	body?: T;
 	options?: {
@@ -9,7 +7,7 @@ interface PostOptions<
 }
 
 export class HttpClient {
-	async post<T extends Record<string, unknown>, ResponseBody>(
+	async post<T = void, ResponseBody = void>(
 		options: PostOptions<T>,
 	): Promise<ResponseBody> {
 		const res = await fetch(options.url, {
