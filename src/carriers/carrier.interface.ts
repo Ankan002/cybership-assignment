@@ -1,5 +1,5 @@
 import type { RateQuote, RateRequest } from "@/models/rate";
 
-export interface CarrierInterface {
-	getRates(request: RateRequest): Promise<RateQuote>;
+export interface Carrier {
+	getRates(request: RateRequest): Promise<RateQuote[]>;
 }

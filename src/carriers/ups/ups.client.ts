@@ -13,7 +13,7 @@ export class UPSClient {
 		this.auth = new UPSAuthClient(this.http, credentials);
 	}
 
-	async getUPSRate(request: UPSRateRequest) {
+	async getRate(request: UPSRateRequest) {
 		const token = await this.auth.getToken();
 
 		return this.http.post<UPSRateRequest, UPSRateResponse>({

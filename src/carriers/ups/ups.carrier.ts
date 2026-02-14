@@ -1,0 +1,21 @@
+import { type Carrier } from "../carrier.interface";
+import type { RateRequest, RateQuote } from "@/models/rate";
+import { UPSClient } from "./ups.client";
+import type { UPSCredentials } from "./ups.config";
+import { mapToUPSRateRequest, mapFromUPSRateResponse } from "./ups.mapper";
+
+export class UPSCarrier implements Carrier {
+	private client: UPSClient;
+
+	constructor(credentials: UPSCredentials) {
+		this.client = new UPSClient(credentials);
+	}
+
+	async getRates(request: RateRequest): Promise<RateQuote[]> {
+		const payload = mapToUPSRateRequest(request);
+
+		const response = await this.client.getRate(payload);
+
+		return mapFromUPSRateResponse(response);
+	}
+}
